@@ -1,9 +1,15 @@
 <template>
   <header>
-    <h1>Cat Showcases</h1>
-    <p>Beautiful, free photos. Gifted by the world’s most generous community of photographers. 🎁</p>
-    <input>
-    <p class="trend">Trending searches:business, computer, nature, lovehouse</p>
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand brand" href="#">Cat app</a>
+      <button type="button" class="btn btn-info">Action</button>
+    </nav>
+    <div class="container">
+      <h1 class="title">Cat Showcases</h1>
+      <p>Beautiful, free photos. Gifted by the world’s most generous community of photographers. 🎁</p>
+      <input class="form-control search">
+      <p class="trend">Trending searches:business, computer, nature, lovehouse</p>
+    </div>
   </header>
 </template>
 
@@ -15,9 +21,31 @@ export default {
 
 <style lang="scss" scoped>
 header {
-  min-height: 360px;
   background: url('~@/assets/headerbg3.jpg');
   background-size: cover;
+
+  .brand {
+    font-weight: 900;
+    color: lightcoral;
+    text-transform: uppercase;    
+  }
+
+  .title {
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .search {
+    padding: 16px 32px;
+    margin-bottom: 16px;
+  }
+
+  .trend {
+    font-size: 12px;
+  }
+}
+.container {
+  min-height: 360px;
   padding: 32px 48px;
 }
 </style>
