@@ -20,7 +20,7 @@ export default {
     loveAction: {
       type: Boolean,
       default: false,
-    }
+    },
   },
 }
 </script>
@@ -51,4 +51,3 @@ export default {
   }
 }
 </style>
-

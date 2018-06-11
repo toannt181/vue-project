@@ -27,7 +27,7 @@ header {
   .brand {
     font-weight: 900;
     color: lightcoral;
-    text-transform: uppercase;    
+    text-transform: uppercase;
   }
 
   .title {
@@ -45,7 +45,7 @@ header {
   }
 }
 .container {
-  min-height: 360px;
-  padding: 32px 48px;
+  min-height: 400px;
+  padding: 80px 48px;
 }
 </style>

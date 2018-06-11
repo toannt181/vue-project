@@ -1,13 +1,26 @@
 <template>
-  <ul class="d-flex nav">
-    <li class="active">Trending</li>
-    <li>News</li>
-  </ul>
+  <div>
+    <ul class="d-flex nav">
+      <li class="active">Trending</li>
+      <li>News</li>
+    </ul>
+    <ul class="d-flex list-type">
+      <li class="item" v-for="(catType, key) in catTypes" :key="key">
+        <router-link :to="'/' + catType">{{ catType }}</router-link>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'Navigator',
+  props: {
+    catTypes: {
+      type: Array,
+      default: () => [],
+    },
+  },
 }
 </script>
 
@@ -27,5 +40,20 @@ export default {
     }
   }
 }
+.list-type {
+  margin: 8px 0 16px;
+  .item {
+    padding: 4px 8px;
+    background-color: #f1f1f1;
+    border-radius: 2px;
+    font-size: 14px;
+    transition: all 0.1s ease-in-out;
+    text-transform: capitalize;
+    margin-right: 4px;
+    a {
+      color: grey;
+      text-decoration: none;
+    }
+  }
+}
 </style>
-
