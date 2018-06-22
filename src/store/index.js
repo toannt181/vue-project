@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import cats from './modules/cats'
+import home from './home'
 
 Vue.use(Vuex)
 
@@ -10,7 +10,7 @@ const store = new Vuex.Store({
     base: 100,
   },
   modules: {
-    cats,
+    home,
   },
 })
 

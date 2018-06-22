@@ -1,6 +1,5 @@
 import axios from 'axios'
-
-const baseURL = 'https://dog.ceo/api/breed'
+import { baseURL } from './contants'
 
 function request({ method = 'GET', url, data, params }) {
   return axios({
@@ -8,6 +7,7 @@ function request({ method = 'GET', url, data, params }) {
     baseURL,
     url,
     data,
+    params,
   })
     .then(response => Promise.resolve(response.data))
     .catch(response => {

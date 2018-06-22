@@ -2,22 +2,10 @@
   <div>
     <Header />
     <main>
-      <Navigator :catTypes="catTypes" />
+      <!-- <Navigator :catTypes="catTypes" /> -->
       <div class="row">
-        <div class="col-4">
-          <div v-for="(cat, index) in list1" :key="index">
-            <CatCard :cat="cat" />
-          </div>
-        </div>
-        <div class="col-4">
-          <div v-for="(cat, index) in list2" :key="index">
-            <CatCard :cat="cat" />
-          </div>
-        </div>
-        <div class="col-4">
-          <div v-for="(cat, index) in list3" :key="index">
-            <CatCard :cat="cat" />
-          </div>
+        <div class="col-4" v-for="game in games" :key="game.id">
+          <game-card :game="game" />
         </div>
       </div>
     </main>
@@ -26,55 +14,39 @@
 
 <script>
 import Header from '@/components/Header'
-import CatCard from './CatCard'
+import GameCard from './GameCard'
 import Navigator from './Navigator'
 import { mapActions, mapState } from 'vuex'
-import { capitalize, lowerCase } from 'lodash'
 
 export default {
   name: 'HomePage',
-  components: { Header, CatCard, Navigator },
+  components: { Header, GameCard, Navigator },
   data() {
     return {
-      cats: [],
+      test: [],
     }
   },
   computed: {
-    list1() {
-      return this.list.filter((_, index) => index % 3 === 1)
-    },
-    list2() {
-      return this.list.filter((_, index) => index % 3 === 2)
-    },
-    list3() {
-      return this.list.filter((_, index) => index % 3 === 0)
-    },
-    ...mapState('cats', {
-      list: 'list',
-      catTypes: state => {
-        return state.types.map(type => capitalize(type))
-      },
-    }),
+    ...mapState({ games: state => state.home.games }),
   },
   methods: {
-    ...mapActions('cats', {
-      getCats(dispatch, type) {
-        dispatch('getCats', lowerCase(type))
-      },
-    }),
+    show() {
+      console.log(this.games)
+    },
+    ...mapActions({ fetchListGames: 'home/fetchListGames' }),
   },
   watch: {
     $route(to, from) {
-      if (to.params.type !== from.params.type) this.getCats(to.params.type)
+      // if (to.params.type !== from.params.type) this.getCats(to.params.type)
     },
   },
   created() {
-    const { params: { type } } = this.$route
-    this.getCats(type)
+    // const { params: { type } } = this.$route
+    // this.getCats(type)
+    this.fetchListGames()
   },
-  mounted() {
-    console.log(this)
-  },
+  updated() {},
+  mounted() {},
 }
 </script>
 

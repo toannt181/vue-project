@@ -2,4 +2,6 @@ const DOG_TYPE = {
   affenpinscher: 'affenpinscher',
 }
 
-export { DOG_TYPE }
+const baseURL = 'http://localhost:9876'
+
+export { DOG_TYPE, baseURL }

@@ -1,11 +1,10 @@
 <template>
   <header>
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-light">
       <a class="navbar-brand brand" href="#">Cat app</a>
-      <button type="button" class="btn btn-info">Action</button>
     </nav>
     <div class="container">
-      <h1 class="title">Cat Showcases</h1>
+      <h1 class="title">Cat Game</h1>
       <p>Beautiful, free photos. Gifted by the world’s most generous community of photographers. 🎁</p>
       <input class="form-control search">
       <p class="trend">Trending searches:business, computer, nature, lovehouse</p>
@@ -21,18 +20,39 @@ export default {
 
 <style lang="scss" scoped>
 header {
-  background: url('~@/assets/headerbg3.jpg');
+  background: url('~@/assets/cat.jpeg');
   background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
 
-  .brand {
-    font-weight: 900;
-    color: lightcoral;
+  nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    .brand {
+      font-weight: 900;
+      color: lightcoral;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.container {
+  min-height: 400px;
+  padding: 80px 48px;
+  color: white;
+
+  .title {
+    font-size: 60px;
+    font-weight: 700;
     text-transform: uppercase;
   }
 
-  .title {
-    font-weight: 700;
-    text-transform: uppercase;
+  p {
+    font-size: 30px;
   }
 
   .search {
@@ -41,11 +61,7 @@ header {
   }
 
   .trend {
-    font-size: 12px;
+    font-size: 14px;
   }
-}
-.container {
-  min-height: 400px;
-  padding: 80px 48px;
 }
 </style>
