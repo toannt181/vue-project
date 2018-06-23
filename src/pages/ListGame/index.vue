@@ -1,19 +1,21 @@
 <template>
-  <div class="card">
-    <!-- <div class="header">
+  <router-link :to="`/games/${game.id}`">
+    <div class="card">
+      <!-- <div class="header">
       <button v-if="loveAction" type="button" class="btn btn-danger btn-small">Love</button>
     </div> -->
-    <img class="card-img" :src="game.img" />
-    <div class="footer d-flex align-items-center flex-column justify-content-center">
-      <p class="author">{{ game.title }}</p>
-      <p class="meta">{{ game.meta }}</p>
+      <img class="card-img" :src="game.img" />
+      <div class="footer d-flex align-items-center flex-column justify-content-center">
+        <p class="author">{{ game.title }}</p>
+        <p class="meta">{{ game.meta }}</p>
+      </div>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script>
 export default {
-  name: 'GameCard',
+  name: 'ListGame',
   props: {
     game: Object,
   },

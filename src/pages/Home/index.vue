@@ -14,7 +14,7 @@
 
 <script>
 import Header from '@/components/Header'
-import GameCard from './GameCard'
+import GameCard from '@/pages/ListGame'
 import Navigator from './Navigator'
 import { mapActions, mapState } from 'vuex'
 
