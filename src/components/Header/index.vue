@@ -1,30 +1,61 @@
 <template>
-  <header>
+  <header :class="{ small: nav, 'd-flex': nav }">
     <nav class="navbar navbar-light">
-      <a class="navbar-brand brand" href="#">Cat app</a>
+      <router-link to="/"><a class="navbar-brand brand" href="#">Cat app</a></router-link>
     </nav>
-    <div class="container">
-      <h1 class="title">Cat Game</h1>
-      <p>Beautiful, free photos. Gifted by the world’s most generous community of photographers. 🎁</p>
-      <input class="form-control search">
-      <p class="trend">Trending searches:business, computer, nature, lovehouse</p>
+    <div :class="{ container: true, small: nav }">
+      <h1 class="title">{{ title }}</h1>
+      <template v-if="trending">
+        <p>{{ meta }}</p>
+        <input class="form-control search">
+        <p class="trend">{{ trending }}</p>
+      </template>
     </div>
+    <img :src="src" class="bg-image" alt="Cat">
   </header>
 </template>
 
 <script>
+import bgDefault from '@/assets/cat.jpeg'
+
 export default {
   name: 'Header',
+  props: {
+    title: {
+      type: String,
+      default: 'Cat Game',
+    },
+    meta: {
+      type: String,
+      default:
+        'Beautiful, free photos. Gifted by the world’s most generous community of photographers. 🎁',
+    },
+    src: {
+      type: String,
+      default: bgDefault,
+    },
+    nav: {
+      type: Boolean,
+      default: false,
+    },
+    trending: {
+      type: String,
+      default: 'Trending searches:business, computer, nature, lovehouse',
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 header {
-  background: url('~@/assets/cat.jpeg');
-  background-size: cover;
-  height: 100vh;
+  height: 50vh;
+  &.small {
+    height: 64px;
+  }
   display: flex;
   align-items: center;
+  position: relative;
+  overflow: hidden;
 
   nav {
     position: absolute;
@@ -38,9 +69,21 @@ header {
       text-transform: uppercase;
     }
   }
+
+  .bg-image {
+    position: absolute;
+    top: -50%;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+  }
 }
 
 .container {
+  &.small {
+    min-height: 0px;
+    margin-top: 8px;
+  }
   min-height: 400px;
   padding: 80px 48px;
   color: white;

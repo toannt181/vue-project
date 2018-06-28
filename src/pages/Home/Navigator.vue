@@ -4,11 +4,9 @@
       <li class="active">Trending</li>
       <li>News</li>
     </ul>
-    <ul class="d-flex list-type">
-      <li class="item" v-for="(catType, key) in catTypes" :key="key">
-        <router-link :to="'/' + catType">{{ catType }}</router-link>
-      </li>
-    </ul>
+    <button @click="click"> click on me
+      <slot></slot>
+    </button>
   </div>
 </template>
 
@@ -16,9 +14,17 @@
 export default {
   name: 'Navigator',
   props: {
-    catTypes: {
-      type: Array,
-      default: () => [],
+    name: {
+      type: String,
+    },
+    accept: {
+      type: Function,
+      default: () => console.log('hihi'),
+    },
+  },
+  methods: {
+    click() {
+      this.$emit('accept')
     },
   },
 }

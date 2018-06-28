@@ -61,7 +61,7 @@ export default {
   }
 
   &:hover {
-    box-shadow: 16px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 6px 6px 16px rgba(0, 0, 0, 0.3);
     transform: translate(-8px, -8px);
 
     .footer {

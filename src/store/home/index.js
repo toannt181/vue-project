@@ -14,7 +14,6 @@ const mutations = {
 const actions = {
   async fetchListGames(context, payload) {
     try {
-      context.commit(UPDATE_GAMES, [])
       const games = await GamesService.getListGames(payload)
       context.commit(UPDATE_GAMES, games)
     } catch (e) {

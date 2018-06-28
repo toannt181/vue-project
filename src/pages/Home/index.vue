@@ -2,7 +2,7 @@
   <div>
     <Header />
     <main>
-      <!-- <Navigator :catTypes="catTypes" /> -->
+      <!-- <Navigator :name="'click know'" @accept="onAccept($emit)"> is this funny </Navigator> -->
       <div class="row">
         <div class="col-4" v-for="game in games" :key="game.id">
           <game-card :game="game" />
@@ -30,8 +30,8 @@ export default {
     ...mapState({ games: state => state.home.games }),
   },
   methods: {
-    show() {
-      console.log(this.games)
+    onAccept(res) {
+      console.log('ok', res)
     },
     ...mapActions({ fetchListGames: 'home/fetchListGames' }),
   },
@@ -43,10 +43,11 @@ export default {
   created() {
     // const { params: { type } } = this.$route
     // this.getCats(type)
-    this.fetchListGames()
   },
   updated() {},
-  mounted() {},
+  mounted() {
+    this.fetchListGames()
+  },
 }
 </script>
 

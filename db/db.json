@@ -71,5 +71,23 @@
   ],
   "profile": {
     "name": "typicode"
-  }
+  },
+  "puzzle": [
+    {
+      "id": 1,
+      "sequence": [
+        "https://images.unsplash.com/photo-1505481354248-2ba5d3b9338e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bdf10e1615dc7c122da9b74cd9cfcc0f&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1506014739647-c231072489c4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6df3c0c47a9d3f2459f2976d89881b8e&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1506102785777-2744046d4da8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e3e8cb594e83131a7448b2023f7b26fd&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1508292549404-81fd946f8c2e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=17cef5b2f74f9bc91a12d06301112152&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1503756755766-151cb0cd465f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=08f6944494ab6719d970d7cbceb3daa7&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1501413334794-233d56ab2c78?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e391ce731403ce5c2b6a7ae35e23215f&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1516125073169-9e3ecdee83e7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=77d68759530c63e87b6a76869cd34643&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1517912334325-f97d7ebfefa2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=13c8145b4eb387ad83302b96eca58ef5&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1490481920145-fc78891bbb99?ixlib=rb-0.3.5&s=04330e415eba7ccac24c2554856b6cbc&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1511275539165-cc46b1ee89bf?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4eed771c93754c026e4a14e74dc3251d&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1479065476818-424362c3a854?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=290c91744d9c81d3f7fb1f7a5bdc96ee&auto=format&fit=crop&w=500&q=60"
+      ]
+    }
+  ]
 }

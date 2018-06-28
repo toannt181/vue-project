@@ -14,7 +14,7 @@ export default new Router({
       component: Home,
     },
     {
-      path: '/game/:id',
+      path: '/games/:id',
       component: GameContainer,
     },
     { path: '*', component: NotFoundPage },
