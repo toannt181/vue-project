@@ -2,6 +2,9 @@
   <div>
     <Header />
     <main>
+      <label>haha
+      <input type="checkbox" v-model="check" @click="haah" />
+      </label>
       <!-- <Navigator :name="'click know'" @accept="onAccept($emit)"> is this funny </Navigator> -->
       <div class="row">
         <div class="col-4" v-for="game in games" :key="game.id">
@@ -23,7 +26,7 @@ export default {
   components: { Header, GameCard, Navigator },
   data() {
     return {
-      test: [],
+      test: [],check: true,
     }
   },
   computed: {
@@ -32,6 +35,14 @@ export default {
   methods: {
     onAccept(res) {
       console.log('ok', res)
+    },
+    haah(res) {
+      console.log(this.check)
+      res.preventDefault()
+      // if (t) {
+      //   this.check = !this.check
+      //   console.log('ha', this.check)
+      // }
     },
     ...mapActions({ fetchListGames: 'home/fetchListGames' }),
   },

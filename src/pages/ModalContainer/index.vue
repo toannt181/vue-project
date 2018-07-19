@@ -3,7 +3,7 @@
     <h1>Input</h1>
     <div class="input-group mb-3">
       <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon1">@</span>
+        <span class="input-group-text" id="basic-addon1">{{ toan }}</span>
       </div>
       <input v-model="username" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
     </div>
@@ -54,12 +54,20 @@
         <p>Female</p>
         <input v-model="gender" type="radio" name="gender" value="female">
       </label>
-      <label>
-        <p>Gay</p>
-        <input v-model="gender" type="radio" name="gender" value="gay">
-      </label>
     </div>
+    <warning-alert :valid="valid" />
 
+    <transition name="fade">
+      <modal-bootstrap :text="username" v-if="isShowing" :toggle="toggle" />
+    </transition>
+
+    <popup/>
+    <input type="checkbox" :value="data.checkb" @change="changebx('checkb')"
+      class="switch-image"
+    />
+    <input type="checkbox" :value="data.haha" @change="changebx('haha')"
+      class="switch-image"
+    />
     <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
       <button @click="submit" type="button" class="btn btn-primary">Submit</button>
       <button type="button" class="btn btn-danger">Delete</button>
@@ -69,36 +77,64 @@
 </template>
 
 <script>
+import WarningAlert from './WarningAlert'
+import ModalBootstrap from './ModalBootstrap'
+import Alert from './Popup'
+import toggle from '@/utils/toggle'
+import Vue from 'vue'
+
 export default {
   name: 'ModalContainer',
-  components: {},
+  mixins: [toggle],
+  components: { WarningAlert, ModalBootstrap, popup: Alert },
   data() {
     return {
       username: 'toan',
       email: 'v@gmail.com',
       web: 'money.org',
-      money: 100,
+      money: 1112300,
       plan: '',
-      gender: '',
+      gender: '1',
+      valid: false,
+      checkb: true,
+      toan: 'haah',
+      data: {
+        checkb: false,
+        haha: false,
+      }
     }
   },
   computed: {},
   methods: {
+    changebx(data) {
+      console.log('change')
+      this.data[data] = !this.data[data]
+    },
     submit() {
-      this.validate()
+      this.valid = this.validate()
+      this.toggle()
+    },
+    hideModal() {
+      this.showModal = false
     },
     validate() {
-      if (!this.username) return false
-      if (!this.email || !/@/gi.test(this.email)) return false
-      if (!this.web) return false
-      if (!this.gender) return false
-      if (!this.money) return false
-      if (this.money < 10000) return false
+      if (!this.username) return 'USERNAME'
+      if (!this.email || !/@/gi.test(this.email)) return 'EMAIl'
+      if (!this.web) return 'WEB'
+      if (!this.gender) return 'GENDER'
+      if (!this.money) return 'MONEY'
+      if (this.money < 10000) return 'MONEY_NOT_ENOUGH'
     },
   },
-  created() {},
+  created() {
+    setTimeout(function() {
+      console.log(this)
+      Vue.set(this, 'toan', 'htttaha')
+    }, 1000)
+  },
 }
 </script>
 
 <style lang="scss" scoped>
+
 </style>
