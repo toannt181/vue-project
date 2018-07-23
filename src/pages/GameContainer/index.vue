@@ -71,6 +71,7 @@ export default {
           this.$router.replace('/')
           return {}
         }
+
         return gameData
       },
       gameMaterial(state) {
@@ -157,7 +158,8 @@ export default {
       opacity: 1;
       border-bottom: 20px solid palevioletred;
     }
-    &.correct::after, &.wrong::after {
+    &.correct::after,
+    &.wrong::after {
       content: '';
       position: absolute;
       top: 0;

@@ -4,6 +4,7 @@
     <main>
       <!-- <Navigator :name="'click know'" @accept="onAccept($emit)"> is this funny </Navigator> -->
       <div class="row">
+        <div>{{ message | capitalize }}</div>
         <div class="col-4" v-for="game in games" :key="game.id">
           <game-card :game="game" />
         </div>
@@ -24,6 +25,7 @@ export default {
   data() {
     return {
       test: [],
+      message: 'toan go in to the'
     }
   },
   computed: {
@@ -48,6 +50,7 @@ export default {
   mounted() {
     this.fetchListGames()
   },
+
 }
 </script>
 
