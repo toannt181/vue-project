@@ -1,5 +1,6 @@
 <template>
   <div>
+      <button @click="cc">BUSSS</button>
     <ul class="d-flex nav">
       <li class="active">Trending</li>
       <li>News</li>
@@ -26,6 +27,9 @@ export default {
     click() {
       this.$emit('accept')
     },
+    cc() {
+      this.$bus.$emit('toan', new Date())
+    }
   },
 }
 </script>

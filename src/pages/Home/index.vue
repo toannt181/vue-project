@@ -5,7 +5,13 @@
       <label>haha
       <input type="checkbox" v-model="check" @click="haah" />
       </label>
-      <!-- <Navigator :name="'click know'" @accept="onAccept($emit)"> is this funny </Navigator> -->
+      <router-link to="/modal">
+        <button>move</button>
+      </router-link>
+      <div>
+        {{ test }}
+      </div>
+      <Navigator :name="'click know'" @accept="onAccept($emit)"> is this funny </Navigator>
       <div class="row">
         <div class="col-4" v-for="game in games" :key="game.id">
           <game-card :game="game" />
@@ -44,6 +50,9 @@ export default {
       //   console.log('ha', this.check)
       // }
     },
+    newTest(e) {
+       console.log({ e})
+    },
     ...mapActions({ fetchListGames: 'home/fetchListGames' }),
   },
   watch: {
@@ -54,6 +63,9 @@ export default {
   created() {
     // const { params: { type } } = this.$route
     // this.getCats(type)
+     
+    this.$bus.$on('toan', this.newTest  )
+    this.$bus.$on('toan', this.newTest  )
   },
   updated() {},
   mounted() {

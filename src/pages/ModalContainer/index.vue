@@ -1,6 +1,9 @@
 <template>
   <div class="container">
     <h1>Input</h1>
+          <router-link to="/">
+        <button>move</button>
+      </router-link>
     <div class="input-group mb-3">
       <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon1">{{ toan }}</span>
