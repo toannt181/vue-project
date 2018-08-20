@@ -1,12 +1,8 @@
 <template>
   <div>
     <ul class="d-flex nav">
-      <li class="active">
-        <router-link to="/modal">modal</router-link>
-      </li>
-      <li>
-        <router-link to="/info">info</router-link>
-      </li>
+      <li class="active">Trending</li>
+      <li>News</li>
     </ul>
     <button @click="click"> click on me
       <slot></slot>
