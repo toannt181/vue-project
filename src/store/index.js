@@ -1,17 +1,27 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
-import home from './home'
+import { fetchItem } from './api'
 
 Vue.use(Vuex)
 
-const store = new Vuex.Store({
-  state: {
-    base: 100,
-  },
-  modules: {
-    home,
-  },
-})
-
-export default store
+export default function createStore() {
+  return new Vuex.Store({
+    state: {
+      items: {},
+    },
+    actions: {
+      fetchItem({ commit }, id) {
+        // return the Promise via `store.dispatch()` so that we know
+        // when the data has been fetched
+        return fetchItem(id).then(item => {
+          commit('setItem', { id, item })
+        })
+      },
+    },
+    mutations: {
+      setItem(state, { id, item }) {
+        Vue.set(state.items, id, item)
+      },
+    },
+  })
+}
