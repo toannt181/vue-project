@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Test toan="hahah" />
     <Header />
     <main>
       <label>haha
@@ -19,11 +20,12 @@
 import Header from '@/components/Header'
 import GameCard from '@/pages/ListGame'
 import Navigator from './Navigator'
+import Test from './Test'
 import { mapActions, mapState } from 'vuex'
 
 export default {
   name: 'HomePage',
-  components: { Header, GameCard, Navigator },
+  components: { Header, GameCard, Navigator, Test },
   data() {
     return {
       test: [],check: true,
